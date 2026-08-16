@@ -1,5 +1,4 @@
 # RTL-Power-Estimation
-Scripting Languages and Verification - BEVD205L
 1.1	OBJECTIVE and GOALS
 
 The primary objective of this project is to develop a scripting-based tool that performs early-stage power estimation at the RTL (Register Transfer Level) for digital circuits described in Verilog. The tool aims to automate the power analysis process, offering designers early insights into the power characteristics of their designs, thus enabling informed design decisions for power-efficient VLSI systems.
