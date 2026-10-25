@@ -61,6 +61,5 @@ Tech Node(nm)- 32
 power_report.txt
 For Plots - Check the file included in the repository named - vdd_vs_power.png
 
-**All the sample input file and output files are included**
 
 
