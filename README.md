@@ -1,65 +1,40 @@
 # RTL-Power-Estimation
-1.1	OBJECTIVE and GOALS
 
-The primary objective of this project is to develop a scripting-based tool that performs early-stage power estimation at the RTL (Register Transfer Level) for digital circuits described in Verilog. The tool aims to automate the power analysis process, offering designers early insights into the power characteristics of their designs, thus enabling informed design decisions for power-efficient VLSI systems.
-Goals: 
-- Design a User-Friendly GUI Interface using TCl/tk
-- Automate Verilog Parsing using perl.
--Estimate Dynamic Power, Leakage Power, and Clock Power using analytical models.
--Incorporate toggle factor heuristics and technology-dependent parameters.
--Allow users to select from common nodes (e.g., 180nm, 90nm, 45nm), adapting the model parameters accordingly.
--Export results in both CSV and text formats for easy interpretation and record-keeping. 
--Highlight high-power modules early in the design flow to help guide optimization strategies
+A Perl and Tcl/Tk tool that estimates power for Verilog designs at the RTL stage, before synthesis, so high-power modules can be spotted early.
 
-STEP BY STEP INSTRUCTIONS TO EXECUTE THE PROGRAM -
-  Prepare the Environment:
-  
-•	Install Perl, Tcl/Tk, and necessary libraries.
+## Features
+- Tcl/Tk GUI for entering parameters and loading a Verilog file
+- Perl-based Verilog parsing
+- Analytical estimates of dynamic, leakage and clock power
+- Toggle-factor heuristics and technology-dependent parameters
+- Selectable technology nodes (e.g., 180 nm, 90 nm, 45 nm)
+- Reports exported as CSV and text
+- Highlights the highest-power modules
 
-•	Ensure the Verilog file is ready for analysis (e.g., top_module.v).
+## Requirements
+- Perl
+- Tcl/Tk
+- A Verilog file to analyze (e.g., `top_module.v`)
 
-  Launch the GUI:
-  
-•	Open the Tcl/Tk GUI tool.
+## Usage
+1. Launch the Tcl/Tk GUI.
+2. Enter the clock frequency, supply voltage and technology node.
+3. Load your Verilog file.
+4. Click **Run**.
+5. Open the generated reports.
 
-  Input Parameters:
-  
-•	Enter clock frequency, supply voltage, and technology node in the GUI.
+## Output
+| File | Contents |
+|---|---|
+| CSV report | Detailed power data per module |
+| Text report (`power_report.txt`) | Readable power summary |
+| Log file | Run messages and errors |
 
-•	Upload the Verilog file for processing.
+A power vs. supply voltage plot is included as `vdd_vs_power.png`.
 
-  Run the Tool:
-  
-•	Click the “Run” button to start the power estimation process.
-
-  View the Results:
-  
-•	The tool generates:
-
-o	CSV Report: Detailed power consumption data.
-
-o	Text Report: Human-readable power summary.
-
-o	Log File: Contains process logs and errors.
-
-  Check the Output:
-  
-•	Open and analyze the CSV or text report for power estimation details.
-
-
-**SAMPLE INPUT FILE - test.v**
-
-**SAMPLE INPUT PARAMETERS**
-
-Clock - 1.0 Ghz 
-Voltage - 12V
-Tech Node(nm)- 32
-
-
-**OUTPUT RESULTS**
-
-power_report.txt
-For Plots - Check the file included in the repository named - vdd_vs_power.png
-
-
-
+## Example
+- Input file: `test.v`
+- Clock: 1.0 GHz
+- Voltage: 12 V
+- Technology node: 32 nm
+- Result: `power_report.txt`
